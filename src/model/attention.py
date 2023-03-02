@@ -45,8 +45,6 @@ class NonLocalSparseAttention(nn.Module):
         return torch.cat([x, x_extra_back, x_extra_forward], dim=3)
 
     def forward(self, input):
-        if self.debug:
-            print(f"NonLocalSparseAttention_input: {input.shape}")
         N, _, H, W = input.shape
         x_embed = self.conv_match(input).view(N, -1, H * W).contiguous().permute(0, 2, 1)
         y_embed = self.conv_assembly(input).view(N, -1, H * W).contiguous().permute(0, 2, 1)

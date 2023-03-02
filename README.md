@@ -1,5 +1,5 @@
 # Decoupled Non-local Attention for Single Image Super-Resolution
-This project is for DNLAN introduced in the following paper "Decoupled Non-local Attention for Single Image Super-Resolution", submitted to IEEE Transactions on Cybernetics.
+This project is for DNLAN introduced in the following paper "Decoupled Non-local Attention for Single Image Super-Resolution", submitted to IEEE Transactions on Circuits and Systems for Video Technology.
 
 The code is test on Ubuntu 20.04 environment (Python3.7, PyTorch >= 1.12.0) with Nvidia 3090 GPUs. 
 ## Contents
@@ -38,7 +38,7 @@ For more informaiton, please refer to [EDSR(PyTorch)](https://github.com/thstkdg
 
     ```bash
     # Example X2 SR
-    python main.psy --epochs 1500 --model DNLAN --save DNLAN_x2 --data_test Set5 --save_dir ../output/ --dir_data ../../SrTrainingData --n_GPUs 1 --n_threads 8 --rgb_range 1 --save_models --save_results --lr 1e-4 --decay 300-600-900-1200 --chop --n_resgroups 10 --n_resblocks 4 --reduction 2 --n_hashes 3 --n_feats 128 --n_hashlength 7 --res_scale 0.1 --batch_size 16 --scale 2 --patch_size 96 --data_train DIV2K --data_range 1-800/1-5
+    python main.psy --epochs 1500 --model DNLAN --save DNLAN_x2 --data_test Set5 --save_dir ../output/ --dir_data ../../SrTrainingData --n_GPUs 1 --n_threads 8 --rgb_range 1 --save_models --save_results --lr 1e-4 --decay 300-600-900-1200 --chop --n_resgroups 10 --n_resblocks 4 --reduction 2 --n_hashes 3 --n_feats 192 --n_hashlength 7 --res_scale 0.1 --batch_size 16 --scale 2 --patch_size 96 --data_train DIV2K --data_range 1-800/1-5
     ```
 
 ## Test
@@ -56,7 +56,7 @@ For more informaiton, please refer to [EDSR(PyTorch)](https://github.com/thstkdg
     ```bash
     # No self-ensemble: DNLAN
     # Example X4 SR
-   python main.py --dir_data ../../SrTrainingData --save_dir ../output/ --model DNLAN  --chunk_size 144 --data_test Set5+Set14+B100+Urban100+Manga109 --n_hashes 3 --n_hashlength 7 --chop --save_results --rgb_range 1 --data_range 801-900 --scale 4 --n_feats 128 --n_resgroups 10 --n_resblocks 4 --reduction 2 --res_scale 0.1  --pre_train ../model/model_x4.pt --test_only
+   python main.py --dir_data ../../SrTrainingData --save_dir ../output/ --model DNLAN  --chunk_size 144 --data_test Set5+Set14+B100+Urban100+Manga109 --n_hashes 3 --n_hashlength 7 --chop --save_results --rgb_range 1 --data_range 801-900 --scale 4 --n_feats 192 --n_resgroups 10 --n_resblocks 4 --reduction 2 --res_scale 0.1  --pre_train ../model/model_x4.pt --test_only
     ```
 ## Acknowledgements
 This code is built on [EDSR](https://github.com/sanghyun-son/EDSR-PyTorch) and [Fly-LSH](https://github.com/dataplayer12/Fly-LSH). We thank the authors for sharing their codes.
