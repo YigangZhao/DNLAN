@@ -1,5 +1,5 @@
 # Decoupled Non-local Attention for Single Image Super-Resolution
-This project is for DNLAN introduced in the following paper "Decoupled Non-local Attention for Single Image Super-Resolution", submitted to IEEE Transactions on Circuits and Systems for Video Technology.
+This project is for DNLAN introduced in the following paper "Decoupled Non-local Attention for Single Image Super-Resolution", submitted to IEEE Transactions on Instrumentation and Measurement.
 
 The code is test on Ubuntu 20.04 environment (Python3.7, PyTorch >= 1.12.0) with Nvidia 3090 GPUs. 
 ## Contents
